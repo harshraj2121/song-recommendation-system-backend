@@ -14,7 +14,12 @@ df = pickle.load(open('songs.pkl', 'rb'))
 tfidf = pickle.load(open('tfidf.pkl', 'rb'))
 matrix = pickle.load(open('matrix.pkl', 'rb'))
 
-# ---------------- SEARCH (iTunes API) ----------------
+
+@app.route('/')
+def home():
+    return "Backend is running 🚀"
+
+
 @app.route('/search', methods=['POST'])
 def search():
     try:
